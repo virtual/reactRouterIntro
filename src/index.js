@@ -1,0 +1,71 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import registerServiceWorker from './registerServiceWorker';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
+
+// Step 1: I've already got the correct dependecies injected, now we 
+// just need to use them. Build a root component that simply renders 
+// the "Router" component that we imported. Give it an opening and closing tag instead of
+// the syntax we've been using (don't do this - <Component />). We'll need to put multiple components 
+// within the it. Put an empty div tag within the Router component - this is 
+// necessary - A Router must return one html element, but we can nest multiple things within 
+// that one.
+
+
+//  Router doesn't render anything, so you should still see a blank page. Next,
+//  inside the div tags, make an unordered list with one list element inside of it.
+//  Inside the list element, build a "Link" component (another one we imported from
+//  react-router). Once again, use an opening and closing tag
+//  Have it contain an attribute "to" which equals the string '/about.'
+//  Put the word "About" in between the Link tags. 
+//  Here's what it should look like - <Link to="/about">About</Link>
+//  Add another Link component within another li tag. Replace "about" and "About"
+//  with "differentPage" and "Different Page". 
+
+//  Render the page and click on the words - notice the url changes when you click
+//  Using the Link component is how we can navigate to different parts of an application!
+
+// Now we need to get the Router to render different components depending on where our
+// Link components have navaigated us to. 
+
+// Beneath the unordered list, put an <hr /> tag to give us a bottom border. 
+// Next, beneath that, put in two <Route/> components. There are two attributes
+// to put inside each one - "path" and "component." The "path" matches whatever
+// path is generated through a Link component, and the component is equal 
+// to a javascript expression that is the name of the component to render
+// Set them equal to: path="/about" and component={About}
+
+// Now go to the page, click on the words, notice that when we change paths (the url changes).
+// we render different components! Woo! That's the essence of react-router. 
+
+// Now finish this react router by building a "Different Page" component. Build
+// another Route component, set the proper props, and by clicking on each link,
+// render different components!
+
+class App extends React.Component{
+  render(){
+    return(
+    )
+  }
+}
+
+class About extends React.Component{
+  render(){
+    return (
+      <div>
+        My name is Garth Brooks and I got friends in low places. lol just kidding
+        I'm a millionaire with friends in high places
+      </div>
+    )
+  }
+}
+
+
+ReactDOM.render(<App />, document.getElementById('root'));
+registerServiceWorker();
